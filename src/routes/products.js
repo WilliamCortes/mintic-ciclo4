@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get('/all', getAllProductss);
 
-router.get('/price', getProductPrice);
+router.get('/price/110000', getProductPrice);
 
 router.get('/description/calidad', getProductQuantity);
 
