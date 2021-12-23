@@ -1,5 +1,5 @@
 const express = require('express');
-const { getAllUsers, createNewUser, getUserById, addBookToUser, removeBookToUser } = require('../controllers/users.js');
+const { getAllUsers, createNewUser, getUserById, addProductsToUser, removeProductsToUser } = require('../controllers/users.js');
 
 const router = express.Router();
 
@@ -10,8 +10,8 @@ router.post('/', createNewUser);
 
 router.get('/:id', getUserById);
 
-router.post('/:userId/book/:bookId', addBookToUser);
+router.post('/:userId/Products/:ProductsId', addProductsToUser);
 
-router.put('/:userId/book/:bookId', removeBookToUser);
+router.put('/:userId/Products/:ProductsId', removeProductsToUser);
 
 module.exports = router;

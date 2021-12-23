@@ -1,7 +1,7 @@
 const { Sequelize } = require('sequelize');
-const { dbUser, dbPassword, dbHost, dbName, dbPort } = require('../utils/config');
+// const { dbUser, dbPassword, dbHost, dbName, dbPort } = require('../utils/config');
 const usersFactory = require('./users');
-const booksFactory = require('./books');
+const ProductssFactory = require('./products');
 
 
 // const sequelize = new Sequelize(`postgres://${dbUser}:${dbPassword}@${dbHost}:${dbPort}/${dbName}`, {
@@ -11,14 +11,14 @@ const sequelize = new Sequelize(`postgres://qbybeldv:l0NAn9vHcAtBBW8CB4rjSPxzzYv
 });
 
 const User = usersFactory(sequelize);
-const Book = booksFactory(sequelize);
+const Products = ProductssFactory(sequelize);
 
-User.hasMany(Book);
+User.hasMany(Products);
 
-Book.belongsTo(User);
+Products.belongsTo(User);
 
 module.exports = {
     conn: sequelize,
     User,
-    Book,
+    Products,
 }
