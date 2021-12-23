@@ -3,13 +3,14 @@ const { getAllProductss, getProductPrice, getProductQuantity, addNewProducts, al
 
 const router = express.Router();
 
-router.get('/all', getAllProductss);
+// router.get('/all', getAllProductss);
+router.post('/all', addNewProducts);
 
 router.get('/price/110000', getProductPrice);
 
 router.get('/description/calidad', getProductQuantity);
 
-router.post('/new', addNewProducts);
+// router.post('/new', addNewProducts);
 
 router.get('/rentedProductss', allRentedProductss);
 
