@@ -27,8 +27,8 @@ const { conn } = require('./src/models');
 const { Book } = require('./src/models');
 require("dotenv").config()
 
-const port_number = process.env.PORT || 3001;
-const host = '0.0.0.0';
+const port_number = process.env.PORT || 80;
+const host = '129.153.168.62';
 
 
 conn.sync({
