@@ -8,6 +8,7 @@ const getAllProductss = (req, res, next) => {
 
 const addNewProducts = async (req, res, next) => {
     const { reference, brand, category, nombre, description, availability, price, quantity, photography } = req.body;
+    console.log('llega en body', req.body)
     let ProductssRented
     Products.findAll().
         then(Productss => {
@@ -39,6 +40,7 @@ const addNewProducts = async (req, res, next) => {
                 quantity: product.quantity,
                 photography: product.photography
             }
+            console.log('se va', [...ProductssRented, newProduct])
             res.json([...ProductssRented, newProduct])
         })
         .catch(error => next(error));
